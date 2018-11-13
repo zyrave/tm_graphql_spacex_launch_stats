@@ -5,13 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "author": "Herry Roby",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-eslint": "^10.0.1",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.5",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
